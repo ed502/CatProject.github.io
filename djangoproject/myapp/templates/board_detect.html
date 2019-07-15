@@ -1,0 +1,281 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>멋쟁이 사자처럼 집사!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Meow</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">내 정보</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">길고양이 지도</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="portfolio.html" id="dropdown04" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">게시판</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="{% url 'board_free'%}">고양이 자유게시판</a>
+                            <a class="dropdown-item" href="{% url 'board_detect'%}">고양이 탐정게시판</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">사료</a></li>
+                    <li class="nav-item cta"><a href="contact.html" class="nav-link"><span>로그인</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END nav -->
+
+    <!-- <div class="js-fullheight"> -->
+    <div class="hero-wrap js-fullheight">
+        <div class="overlay"></div>
+        <div id="particles-js"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center"
+                data-scrollax-parent="true">
+                
+                    <div class="container-fluid">
+                        <div class="row">
+                            
+                            <div class="col-sm-10">
+                                
+                                
+                                <br><br>
+                                <div >
+                                    <table class="table table-striped table-bordered table-hover "
+                                        style="background-color: #EF5350;width: 1000px;margin-left:250px ">
+                                        <thead style="background-color: #D32F2F;" align="center">
+                                            <tr>
+                                                <th width="10%">번호</th>
+                                                <th width="50%">제목</th>
+                                                <th width="10%">작성자</th>
+                                                <th width="20%">작성일</th>
+                                                <th width="10%">조회</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="thead-white" align="center">
+                                            <tr>
+                                                <td>1</td>
+                                                <td>"19년 강건재 제품 솔루션 과제 공모(1차)</td>
+                                                <td>관리자</td>
+                                                <td>2019.01.01</td>
+                                                <td>10</td>
+                                            <tr>
+                                        </tbody>
+                                        <tbody align="center">
+                                            <tr>
+                                                <td>2</td>
+                                                <td>"18년 강건재 제품 솔루션 과제 공모(2차)</td>
+                                                <td>관리자</td>
+                                                <td>2019.01.02</td>
+                                                <td>10</td>
+                                            <tr>
+                                        </tbody>
+                                        <tbody align="center">
+                                            <tr>
+                                                <td>3</td>
+                                                <td>"17년 강건재 제품 솔루션 과제 공모(3차)</td>
+                                                <td>관리자</td>
+                                                <td>2019.01.03</td>
+                                                <td>10</td>
+                                            <tr>
+                                        </tbody>
+                                        <tbody align="center">
+                                            <tr>
+                                                <td>4</td>
+                                                <td>"16년 강건재 제품 솔루션 과제 공모(4차)</td>
+                                                <td>관리자</td>
+                                                <td>2019.01.04</td>
+                                                <td>10</td>
+                                            <tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="container-fluid row">
+
+
+                                </div>
+
+                                <div class="card-body text-dark">
+                                    <div class="float-right">
+                                        <form class="form-inline" action="" method="post">
+                                            <div id="d">
+                                                <div class="form-group">
+                                                    &emsp;&emsp;&emsp;
+                                                    <select class="form-control">
+                                                        <option selected>속성</option>
+                                                        <option>제목</option>
+                                                        <option>내용</option>
+                                                        <option>이름</option>
+                                                    </select>
+                                                    &emsp;
+                                                    <input type="text" id="searchTxt" name="searchTxt"
+                                                        class="form-control" placeholder="검색어를 입력하세요">&emsp;
+
+                                                    <button type="submit" class="btn btn-primary">
+                                                        <b>검색</b>
+                                                    </button>&emsp;
+
+                                                    <button type="submit" class="btn btn-primary">
+                                                        <b>글 작성</b>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Snipp.</h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                            there live the blind texts.</p>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4 ml-5">
+                        <h2 class="ftco-heading-2">Quick Links</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="py-2 d-block">Home</a></li>
+                            <li><a href="#" class="py-2 d-block">내 정보</a></li>
+                            <li><a href="#" class="py-2 d-block">고양이 자랑글</a></li>
+                            <li><a href="#" class="py-2 d-block">고양이 자유게시판</a></li>
+                            <li><a href="#" class="py-2 d-block">길고양이 지도</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Contact Information</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="py-2 d-block">198 West 21th Street, Suite 721 New York NY 10016</a>
+                            </li>
+                            <li><a href="#" class="py-2 d-block">+ 1235 2355 98</a></li>
+                            <li><a href="#" class="py-2 d-block">info@yoursite.com</a></li>
+                            <li><a href="#" class="py-2 d-block">email@email.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+                            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+                        is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                            target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00" /></svg></div>
+
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+    <script src="{% static 'js/particles.min.js' %}"></script>
+    <script src="{% static 'js/particle.js' %}"></script>
+    <script src="{% static 'js/scrollax.min.js' %}"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="{% static 'js/google-map.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
