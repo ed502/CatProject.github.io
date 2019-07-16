@@ -37,6 +37,15 @@
     <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
+    <title>color</title>
+    <style type="text/css">
+    body {
+        background-color: #e7e7e7;
+    }
+    #color1 {color: #ff0000; margin: 10px;}
+    #color2 {color: #00ff00; margin: 10px;}
+    #color3 {color: #000000; margin: 10px;}
+</style>
 
 
 </head>
@@ -82,22 +91,43 @@
                 
                     <div class="container-fluid">
 
-
-                            
-                            
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                <h1> Basic panel example</h1>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                    <div>
+                                    <center>
+                                    <img src="{% static 'images/supprot_ntr.jpg' %}" height =400>
+                                    </center>
+                                    </div>
+                                    <center>
+                                    <button
+                                    type="button"
+                                    style="color: #fff; background:rgba(255, 0, 76, 0.274); font-size:2em; border-radius:0.5em; padding:5px 20px;"
+                                    onclick="alert('이 버튼은 도움말 띄우기 예제 입니다')">후원 하기</button>
+                                    </center>
                                 </div>
+    
+                        </div>
 
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                            <div>
+                                            <center>
+                                            <img src="{% static 'images/supprot_num.jpg' %}" height =400>
+                                            </center>
+                                            </div>
+
+                                            <center>
+                                            <button
+                                            type="button"
+                                            style="color: #fff; background:rgba(255, 0, 76, 0.274); font-size:2em; border-radius:0.5em; padding:5px 20px;"
+                                            onclick="alert('이 버튼은 도움말 띄우기 예제 입니다')">후원 하기</button>
+                                            </center>
                             </div>
 
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                <h1> Basic panel example</h1>
-                                </div>
-                            </div>
+                        </div>
 
+                       
                             
                     </div>
 
