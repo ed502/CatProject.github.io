@@ -11,3 +11,6 @@ def login(request):
 
 def logout(request):
     return render(request, 'login.html')
+
+def mypage(request):
+    return render(request, 'mypage.html')

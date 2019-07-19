@@ -39,7 +39,7 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href={%url 'index'%} class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">내 정보</a></li>
+          <li class="nav-item"><a href={%url 'mypage'%} class="nav-link">내 정보</a></li>
           <li class="nav-item"><a href="services.html" class="nav-link">길고양이 지도</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="portfolio.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">게시판</a>
@@ -59,7 +59,9 @@
     {% block contents %}
     <!--컨텐츠 들어가는 장소-->
     {% endblock %}
-    
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
