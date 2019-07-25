@@ -9,3 +9,7 @@ def index(request):
 
 def support(request):
     return render(request, 'support.html')
+
+def pop_tnr(request):
+    return render(request, 'pop_tnr.html')
+    
