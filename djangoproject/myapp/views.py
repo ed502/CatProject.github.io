@@ -12,4 +12,6 @@ def support(request):
 
 def pop_tnr(request):
     return render(request, 'pop_tnr.html')
-    
+
+def pop_snack(request):
+    return render(request, 'pop_snack.html')
