@@ -15,3 +15,9 @@ def pop_tnr(request):
 
 def pop_snack(request):
     return render(request, 'pop_snack.html')
+
+def support_success(request):
+    return render(request, 'support_success.html')
+
+def support_success2(request):
+    return render(request, 'support_success2.html')

@@ -23,11 +23,11 @@
 <center>
   <img src="{% static 'images/snack.jpg' %}" height=200 width=600>
 
-  <form>
+  <form action="{% url 'support_success2' %}" method="GET">
     <p>후원자 이름 [예금주]:
-    <input type="text" name="name"><br></p>
+    <input type="text" style="width: 100; height: 30;" name="name"><br></p>
     <p>후원 금액:
-    <input type="text" name="money"> 원<br></p>
+    <input type="text" style="width: 100; height: 30;" name="money"> 원<br></p>
     <input type="submit" value=" 후원하기 "
         style="color: #fff; background:rgba(255, 0, 76, 0.274); font-size:2em; border-radius:0.5em; padding:5px 20px;">
   </form>
