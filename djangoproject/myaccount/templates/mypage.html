@@ -2,6 +2,7 @@
 {% load static %}
 {% block contents %}
 <!-- <div class="js-fullheight"> -->
+  <style></style>
         <div id="scroll" class="hero-wrap js-fullheight">
                 <div class="overlay"></div>
                 <div id="particles-js"></div>
@@ -11,29 +12,32 @@
                       <!--include here, your own information-->
                       <img src="{% static 'catuser.png' %}" height="200" alt="" class="img-rounded">
                       <br>
+
+                      <div class="shadow p-3 mb-5 rounded" style="background-color: pink (opacity=10)">
+                      
+                        
                       <h7>이름: </h7> <h7>백수연</h7>
                       <br>
+                      
                       <h7>이메일: </h7> <h7>tndus3908@likelion.org</h7>
                       <br>
+                      
                       <h7>거주지: </h7> <h7>지구
                       <br>
-                      <h7>후원상태: </h7>
+                      <br>
                       
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                      <h7>My Support State</h7>
+                      <br>
+                      <div class="progress" style="height: 5px;">
+                          <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="progress" style="height: 20px;">
+                          <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
                       </div>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
+                 
 
                     </div>
                   </div>
