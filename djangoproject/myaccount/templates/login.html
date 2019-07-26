@@ -9,13 +9,17 @@
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
             <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-                <!--form 넣기-->
+              {% if error %}
+              {{ error }}
+              <br><br>
+              {% endif %}
+              <!--form 넣기-->
                 <form method = "POST" action="{% url 'login' %}">
                     {% csrf_token %}
                         <div class="form-group col-md-8" style="float: none; margin:auto">
-                          <label for="InputID">ID</label>
-                          <input type="text" class="form-control" id="InputID" name="userid" aria-describedby="idHelp" placeholder="Enter your ID">
-                          <small id="idHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          <label for="InputID">Nickname</label>
+                          <input type="text" class="form-control" id="InputID" name="username" aria-describedby="idHelp" placeholder="Enter your ID">
+                          <small id="idHelp" class="form-text text-muted">We'll never share your information with anyone else.</small>
                         </div><br>
 
                         <div class="form-group col-md-8" style="float: none; margin:auto">
