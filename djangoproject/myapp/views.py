@@ -12,3 +12,4 @@ def board_free(request):
 
 def board_detect(request):
     return render(request, 'board_detect.html')
+    
