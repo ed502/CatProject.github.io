@@ -88,24 +88,19 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <!--
- {% for policy in posts %}
+                                                {% for free_list in posts %}
                                                 <tr>
-                                                    <td>{{policy.id}}</td>
-                                                    <td><a href="{% url 'detail' policy.id %}">{{policy.title}}</a></td>
-                                                    <td>{{policy.writer}}</td>
-                                                    <td>{{policy.pub_date | date:"Y-m-d"}}</td>
-                                                    <td>{{policy.hits}}</td>
+                                                    <td>{{free_list.id}}</td>
+                                                    <td><a style="color: white;" href="{% url 'detail' free_list.id %}">{{free_list.title}}</a></td>
+                                                    <td>{{free_list.writer}}</td>
+                                                    <td>{{free_list.pub_date | date:"Y-m-d"}}</td>
+                                                    <td>{{free_list.hits}}</td>
                                                 </tr>
                                                 {% endfor %}
 
-
-                                            -->
                                                
                                         </tbody>
-
-
-
+          
 
                                     </table>
                                 </div>
@@ -117,11 +112,29 @@
 
                                 <div class="card-body text-dark">
                                     <div class="float-right">
+                                        
                                         <form class="form-inline" action="" method="post">
                                             {% csrf_token %}
                                             <div id="d">
                                                 <div class="form-group">
+                                                    <div style="background-color: lightpink;">
+                                                            {% if posts.has_previous %}
+                                                            <a href="?page=1">First</a>
+                                                            <a href="?page={{posts.previous_page_number}}">Previous</a>
+                                                            {% endif %}
+                                                        
+                                                            <span>{{posts.number}}</span>
+                                                            <span>of</span>
+                                                            <span>{{posts.paginator.num_pages}}</span>
+                                                        
+                                                            {% if posts.has_next %}
+                                                            <a href="?page={{posts.next_page_number}}">Next</a>
+                                                            <a href="?page={{posts.paginator.num_pages}}">Last</a>
+                                                            {% endif %}
+                                                    </div>
+                                                        
                                                     &emsp;&emsp;&emsp;
+
                                                     <select class="form-control">
                                                         <option selected>속성</option>
                                                         <option>제목</option>
@@ -135,7 +148,7 @@
                                                     <button type="submit" class="btn btn-primary">
                                                         <b>검색</b>
                                                     </button>&emsp;
-                                                    <a class="btn btn-primary" href="{% url 'create_free'%}">글작성</a>
+                                                    <a class="btn btn-primary" href="{% url 'create_free'%}"><strong>글작성</strong></a>
                                                 </div>
                                             </div>
                                      </div>
