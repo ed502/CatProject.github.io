@@ -8,4 +8,6 @@ urlpatterns = [
     path('index/', myapp.views.index, name="index"),
     path('board_free/', myapp.views.board_free, name="board_free"),
     path('board_detect/', myapp.views.board_detect, name="board_detect"),
+    path('create_free/', myapp.views.create_free, name="create_free"),
+    path('newPost', myapp.views.create, name="newPost"),
 ]
