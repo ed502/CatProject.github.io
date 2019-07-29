@@ -48,7 +48,7 @@
                 <a class="dropdown-item" href="{% url 'board_detect'%}">고양이 탐정게시판</a>
               </div>
           </li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">사료</a></li>
+          <li class="nav-item"><a href="{% url 'support'%}" class="nav-link">후원</a></li>
           {% if user.is_authenticated %}
           <li class="nav-item cta"><a href="javascript:{document.getElementById('logout').submit()}" class="nav-link"><span>로그아웃</span></a></li>
           <form id = "logout" method="POST" action="{% url 'logout' %}">
