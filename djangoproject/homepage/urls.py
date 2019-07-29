@@ -1,6 +1,7 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 import myapp.views
+import myaccount.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -12,4 +13,5 @@ urlpatterns = [
     path('newPost', myapp.views.create, name="newPost"),
     path('', myapp.views.read, name="freelist"),
     path('detail/<int:free_list_id>', myapp.views.detail, name="detail"),
+    path('accounts/',include('myaccount.urls')),
 ]
