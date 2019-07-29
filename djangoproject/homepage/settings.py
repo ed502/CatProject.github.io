@@ -20,11 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ho944x!jes^@2c_52hcgegmgxnqs1o8ng^okw4a-!7e-63m7q$'
-
+#SECRET_KEY = 'ho944x!jes^@2c_52hcgegmgxnqs1o8ng^okw4a-!7e-63m7q$'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'ho944x!jes^@2c_52hcgegmgxnqs1o8ng^okw4a-!7e-63m7q$')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+#DEBUG = True
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 ALLOWED_HOSTS = []
 
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -126,3 +127,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'myapp', 'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
