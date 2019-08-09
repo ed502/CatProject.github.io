@@ -1,63 +1,6 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>멋쟁이 사자처럼 집사!</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=via7vpdgp3"></script>
-
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,700,800" rel="stylesheet">
-
-    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-    
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-
-    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
-
-    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
-
-    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
-    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
-
-    
-    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
-    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  </head>
-  <body>
-    
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Meow</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
-      </button>
-
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">내 정보</a></li>
-          <li class="nav-item"><a href="{% url 'map' %}" class="nav-link">길고양이 지도</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="portfolio.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">게시판</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="portfolio.html">고양이 자랑게시판</a>
-                <a class="dropdown-item" href="portfolio-single.html">고양이 자유게시판</a>
-                <a class="dropdown-item" href="portfolio-single.html">고양이 탐정게시판</a>
-              </div>
-          </li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">사료</a></li>
-          <li class="nav-item cta"><a href="contact.html" class="nav-link"><span>로그인</span></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-    <!-- END nav -->
+{% block contents %}
     
     <!-- <div class="js-fullheight"> -->
 
@@ -67,20 +10,60 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%', opacity: 1.6 }">
-            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='{% url 'newMap' %}'">추가하기</button>
+            {% if user.is_authenticated %}
+              <button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='{% url 'newMap' loc %}'">추가하기</button>
+            {% else %}
+              <button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='#'">로그인 후 사용가능</button>
+            {% endif %}
             <br>
             <div class="container">
               <div class="row">
                 {% for cat in posts %}
                   <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
+                      <div href="#layer2" class="btn-example">
                       <img class="card-img-top" src="{{ cat.image.url }}"height=200 alt="Card image cap">
+                      </div>
                       <div class="card-body">
                         <h4>{{ cat.name }} </h4>
                         <div class="d-flex justify-content-between align-items-center">
                           <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='{% url 'detailMap' cat.id %}'">지도 보기</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">수정하기</button>
+                            <!--<button type="button" class="btn btn-sm btn-outline-secondary"> -->                          
+                            
+                            <div class="dim-layer">
+                              <div class="dimBg"></div>
+                              <div id="layer2" class="pop-layer">
+                                <div class="pop-container">
+                                  <div class="pop-conts">
+                                    <!--content //-->
+                                    <div class="ctxt mb20">
+                                      <div class="row">
+                                        <div class="col-md-5"> 
+                                          <img style="float:left;" src="{{ cat.image.url }}" width="350">
+                                        </div>
+                                        <div class="col-md-1">
+                                          
+                                        </div>
+                                        <div class="col-md-6">
+                                          <br>
+                                          <div style="text-align:left">
+                                            <p> 이름: {{ cat.name }}<br>
+                                                장소: {{ cat.location }}<br>
+                                                특징: {{ cat.feature }}
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="btn-r">
+                                      <a href="#" class="btn-layerClose">Close</a>
+                                    </div>                              
+                                    <!--// content-->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>                        
+                            <!--<button type="button" class="btn btn-sm btn-outline-secondary">수정하기</button> -->
                           </div>
                         </div>
                       </div>
@@ -120,26 +103,4 @@
               </script>
             -->
     <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
-    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-    <script src="{% static 'js/aos.js' %}"></script>
-    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
-    <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
-    <script src="{% static 'js/particles.min.js' %}"></script>
-    <script src="{% static 'js/particle.js' %}"></script>
-    <script src="{% static 'js/scrollax.min.js' %}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="{% static 'js/google-map.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-    </body>
-</html>
+    {% endblock %}
