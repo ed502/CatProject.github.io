@@ -94,7 +94,6 @@ def support_success(request):
     #return render(request, 'support_success.html')
 
 def support_success2(request):
-<<<<<<< HEAD
     supports = Support.objects.all()
     supports.type = 'SNACK'
     supports.supporter = request.GET.get('supporter2','')
@@ -103,5 +102,3 @@ def support_success2(request):
     supports.save()
     return redirect('/support/support_success2')
     #return render(request, 'support_success2.html')
-=======
->>>>>>> 11fdffcc4c60429bd640cb3546c0232b3f006c84
