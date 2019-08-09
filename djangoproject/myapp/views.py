@@ -1,6 +1,7 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render , get_object_or_404, redirect
 from .models import free_list
+from .models import detect_list
 from django.utils import timezone
 
 # Create your views here.
@@ -16,15 +17,30 @@ def board_free(request):
     paginator = Paginator(Free_list2,5)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
-
     return render(request, 'board_free.html', {'free_list' :Free_list, 'posts': posts})
 
-
 def board_detect(request):
-    return render(request, 'board_detect.html')
+    Detect_list = detect_list.objects
+    Detect_list2 = detect_list.objects.all()
+    paginator = Paginator(Detect_list2,5)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
+    return render(request, 'board_detect.html', {'detect_list' :Detect_list, 'posts': posts})
 
 def create_free(request):
     return render(request, 'create_free.html')
+
+def create_detail(request):
+    return render(request, 'create_detail.html')
+
+def create(request):
+    # 새로운 데이터 저장하는 하기 == POST
+    Free_list = free_list()
+    Free_list.title = request.POST.get('title', '')
+    Free_list.body = request.POST.get('body', '')
+    Free_list.pub_date = timezone.datetime.now()
+    Free_list.save()
+    return redirect('http://127.0.0.1:8000/')
 
 def create(request):
     # 새로운 데이터 저장하는 하기 == POST
