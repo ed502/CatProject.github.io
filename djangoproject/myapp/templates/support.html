@@ -1,191 +1,56 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>멋쟁이 사자처럼 집사!</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-        <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,700,800" rel="stylesheet">
-    
-        <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-    
-        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-    
-        <link rel="stylesheet" href="{% static 'css/aos.css' %}">
-    
-        <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
-    
-        <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
-        <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
-    
-    
-        <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
-        <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    
-    <title>color</title>
-    <style type="text/css">
-        body {
-            background-color: #e7e7e7;
-        }
-
-        #color1 {
-            color: #ff0000;
-            margin: 10px;
-        }
-
-        #color2 {
-            color: #00ff00;
-            margin: 10px;
-        }
-
-        #color3 {
-            color: #000000;
-            margin: 10px;
-        }
-
-        .carousel-control-next-icon:after {
-            content: '>';
-            font-size: 55px;
-            color: red;
-        }
-
-        .carousel-control-prev-icon:after {
-            content: '<';
-            font-size: 55px;
-            color: red;
-        }
-    </style>
-</head>
-
-
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Meow</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
-            </button>
-
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">내 정보</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">길고양이 지도</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="portfolio.html" id="dropdown04" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">게시판</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="{% url 'board_free'%}">고양이 자유게시판</a>
-                            <a class="dropdown-item" href="{% url 'board_detect'%}">고양이 탐정게시판</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">사료</a></li>
-                    <li class="nav-item cta"><a href="contact.html" class="nav-link"><span>로그인</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- END nav -->
-
-
-    <!-- <div class="js-fullheight"> -->
-    <div class="hero-wrap js-fullheight">
-        <div class="overlay"></div>
-        <div id="particles-js"></div>
-
-        <div class="row no-gutters slider-text align-items-center justify-content-center"
-                data-scrollax-parent="true">
-
-        <div class="container-fluid">
-           
-                <div class="panel panel-default" style="margin-top: 10%;">
-                    <div class="panel-body">
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <center>
-                                        <img src="{% static 'images/supprot_ntr.jpg' %}" height=450 width=900>
-                                    </center>
-                                    <center>
-                                        <button type="button"
-                                            style="color: #fff; background:rgba(255, 0, 76, 0.274); font-size:2em; border-radius:0.5em; padding:5px 20px;"
-                                            onclick="window.open('pop_tnr','pop_tnr','width=700,height=500,location=no,status=no,scrollbars=no');"
-                                        >후원 하기</button>
-                                            
-                                    </center>
-                                </div>
-                                <div class="carousel-item">
-                                    <center>
-                                        <img src="{% static 'images/supprot_num.jpg' %}" height=449 width=900>
-                                    </center>
-                                    <center>
-                                        <button type="button"
-                                            style="color: #fff; background:rgba(255, 0, 76, 0.274); font-size:2em; border-radius:0.5em; padding:5px 20px;"
-                                            onclick="window.open('pop_snack','pop_tnr','width=700,height=500,location=no,status=no,scrollbars=no');"
-                                            >후원 하기</button>
-                                    </center>
-                                </div>
+{% block contents %}
+<!-- <div class="js-fullheight"> -->
+<div class="hero-wrap js-fullheight" style="background-size: cover">
+    <div class="overlay"></div>
+    <div id="particles-js"></div>
+    <div class="container-fluid">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="panel panel-default" style="margin-top: 5%;background-color: rgba( 255, 255, 255, 0.5 );">
+                <div class="panel-body">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <center>
+                                    <img src="{% static 'images/supprot_ntr.png' %}" height=450 width=900>
+                                </center>
+                                <center>
+                                    <a href="#"
+                                        onclick="window.open('pop_tnr','pop_tnr','width=680,height=400,location=no,status=no,scrollbars=no');"
+                                        class="btn btn-primary btn-lg btn-outline-pink px-5 py-3">
+                                        <font size="5em" color="#eb86b4">후원 하기
+                                    </a></font>
+                                </center>
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                            
+                            <div class="carousel-item">
+                                <center>
+                                    <img src="{% static 'images/supprot_num.png' %}" height=449 width=900>
+                                </center>
+                                <center>
+                                    <a href="#"
+                                        onclick="window.open('pop_snack','pop_tnr','width=680,height=400,location=no,status=no,scrollbars=no');"
+                                        class="btn btn-primary btn-lg btn-outline-pink px-5 py-3">
+                                        <font size="5em" color="#eb86b4">후원 하기
+                                    </a></font>
+                                </center>
+                            </div>
                         </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-    <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-                stroke="#F96D00" /></svg></div>
-
-
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
-    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-    <script src="{% static 'js/aos.js' %}"></script>
-    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
-    <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
-    <script src="{% static 'js/particles.min.js' %}"></script>
-    <script src="{% static 'js/particle.js' %}"></script>
-    <script src="{% static 'js/scrollax.min.js' %}"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="{% static 'js/google-map.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-
-</body>
-
-</html>
+</div>
+{% endblock %}
