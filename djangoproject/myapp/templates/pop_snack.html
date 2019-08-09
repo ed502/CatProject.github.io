@@ -1,0 +1,34 @@
+{% load static %}
+
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
+<style>
+  p {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 23px;
+  }
+  p.a {
+    font-weight: 400;
+  }
+  p.b {
+    font-weight: 700;
+  }
+  p.c {
+    font-weight: 800;
+  }
+  p.d {
+    font-weight: bold;
+  }
+</style>
+
+<center>
+  <img src="{% static 'images/snack.jpg' %}" height=200 width=600>
+
+  <form action="{% url 'support_success2' %}" method="GET">
+    <p>후원자 이름 [예금주]:
+    <input type="text" style="width: 100; height: 30;" name="name"><br></p>
+    <p>후원 금액:
+    <input type="text" style="width: 100; height: 30;" name="money"> 원<br></p>
+    <input type="submit" value=" 후원하기 "
+        style="color: #fff; background:rgba(255, 0, 76, 0.274); font-size:2em; border-radius:0.5em; padding:5px 20px;">
+  </form>
+</center>
