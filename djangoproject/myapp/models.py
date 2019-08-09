@@ -32,5 +32,11 @@ class free_list(models.Model):
     def __str__(self):
         return self.title
 
+class Support(models.Model):
+    type = models.CharField(max_length=20, default="")
+    supporter = models.CharField(max_length=20, default="")
+    money = models.IntegerField(default=0)
+    status = models.BooleanField(default="False")
 
-        
+    def __str__(self):
+        return self.type

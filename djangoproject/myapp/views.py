@@ -2,7 +2,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render , get_object_or_404, redirect
 from .models import free_list
 from django.utils import timezone
-
+from myapp.models import Support
 
 # Create your views here.
 def home(request):
@@ -68,7 +68,21 @@ def pop_snack(request):
     return render(request, 'pop_snack.html')
 
 def support_success(request):
-    return render(request, 'support_success.html')
+    supports = Support.objects.all()
+    supports.type = 'TNR'
+    supports.supporter = request.GET.get('supporter','')
+    supports.money = request.GET.get('money','')
+
+    supports.save()
+    return redirect('/support/support_success')
+    #return render(request, 'support_success.html')
 
 def support_success2(request):
-    return render(request, 'support_success2.html')
+    supports = Support.objects.all()
+    supports.type = 'SNACK'
+    supports.supporter = request.GET.get('supporter2','')
+    supports.money = request.GET.get('money2','')
+
+    supports.save()
+    return redirect('/support/support_success2')
+    #return render(request, 'support_success2.html')
