@@ -76,6 +76,7 @@
                 
                     <div class="container-fluid">
                             <div class="btn-group btn-group-justified" style="margin-left:580px;">
+                                    <a href="#" class="btn btn-primary">서울</a>
                                     <a href="#" class="btn btn-primary">경기도</a>
                                     <a href="#" class="btn btn-primary">강원도</a>
                                     <a href="#" class="btn btn-primary">충청도</a>
@@ -92,46 +93,24 @@
                                         <thead style="background-color: #D32F2F;" align="center">
                                             <tr>
                                                 <th width="10%">번호</th>
-                                                <th width="50%">제목</th>
+                                                <th width="40%">제목</th>
+                                                <th width="10%">위치</th>
                                                 <th width="10%">작성자</th>
                                                 <th width="20%">작성일</th>
                                                 <th width="10%">조회</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="thead-white" align="center">
+                                        <tbody>
+                                            {% for detect_list in posts %}
                                             <tr>
-                                                <td>1</td>
-                                                <td>"19년 강건재 제품 솔루션 과제 공모(1차)</td>
-                                                <td>관리자</td>
-                                                <td>2019.01.01</td>
-                                                <td>10</td>
-                                            <tr>
-                                        </tbody>
-                                        <tbody align="center">
-                                            <tr>
-                                                <td>2</td>
-                                                <td>"18년 강건재 제품 솔루션 과제 공모(2차)</td>
-                                                <td>관리자</td>
-                                                <td>2019.01.02</td>
-                                                <td>10</td>
-                                            <tr>
-                                        </tbody>
-                                        <tbody align="center">
-                                            <tr>
-                                                <td>3</td>
-                                                <td>"17년 강건재 제품 솔루션 과제 공모(3차)</td>
-                                                <td>관리자</td>
-                                                <td>2019.01.03</td>
-                                                <td>10</td>
-                                            <tr>
-                                        </tbody>
-                                        <tbody align="center">
-                                            <tr>
-                                                <td>4</td>
-                                                <td>"16년 강건재 제품 솔루션 과제 공모(4차)</td>
-                                                <td>관리자</td>
-                                                <td>2019.01.04</td>
-                                                <td>10</td>
+                                                <td>{{detect_list.id}}</td>
+                                                <td><a style="color: white;" href="{% url 'd_detail' detect_list.id %}">{{detect_list.title}}</a></td>
+                                                <td>{{detect_list.location}}</td>
+                                                <td>{{detect_list.writer}}</td>
+                                                <td>{{detect_list.pub_date | date:"Y-m-d"}}</td>
+                                                <td>{{detect_list.hits}}</td>
+                                            </tr>
+                                            {% endfor %}
                                             <tr>
                                         </tbody>
                                     </table>
@@ -179,23 +158,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
@@ -256,7 +218,6 @@
             </div>
         </div>
     </footer>
-
 
 
     <!-- loader -->
