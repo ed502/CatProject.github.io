@@ -17,36 +17,40 @@
                         <br><br>
                         <!--내용추가할곳-->
                                         <form>
-                                            <div class="card" style="background-color: rgba(240, 53, 53, 0.6);">
-                                                <h3 class="card-header" style="background-color: rgba(245, 30, 30, 0.6);">
+                                            <div class="card" style="background-color: rgba(255, 238, 212, 0.445);">
+                                                <div class="card-header" style="background-color: rgb(253, 77, 77);">
                                                     <div class="row">
-                                                            <div class="col-sm-2" style="border-right: solid 2px gray;text-align: center; color:white;">
-                                                                    Titles
+                                                            <div class="col-sm-2" style="border-right: solid .5px white;text-align: center; color:white;">
+                                                                    <h3 style=color:white;>Title</h3>
                                                             </div>
-                                                            <div class="col-sm-6" style="color:white;">
-                                                                {{ freeDetail.title }}
+                                                            <div class="col-sm-9" style="color:white;">
+                                                                <h3 style=color:white;>{{ freeDetail.title }}</h3>
                                                             </div>
+                                                            <div><a style="float:left; color:white; text-shadow: 1px 1px 1px gray; font-size: 13px; vertical-align: middle; ">조회수 : {{ freeDetail.hits_counter }}</a></div>
                                                     </div>
-                                                </h3>
+                                                </div>>
                                                 <div class="card-body">
+                                                    
                                                   <h5 class="card-title">
                                                         <div class="row">
-                                                                <div class="col-sm-2" style="border-right: solid 2px gray; text-align: center;  line-height: 150px; color:white;">
+                                                                <div class="col-sm-2" style="border-right: solid .5px white; text-align: center;  line-height: 150px; color:white;">
                                                                     Contents
                                                                 </div>
-                                                                <div class="col-sm-6" style="color:white;">
+                                                                <div class="col-sm-8" style="color:white;">
                                                                     {{ freeDetail.body }}  
-                                                                    내용내용내용
-                                                                    <br>내용내용
+                                                                    
+                                                                    <br>내
+                                                                    <br>용
                                                                     <br>내용
-                                                                    <br>네,,
                                                                 </div>
                                                         </div>
                                                 </h5>
-                                                <hr style="border: solid 1px gray;">
-                                                <a style="float:right;" href="#" class="btn btn-primary"><strong>수정</strong></a>
-                                                <a style="float:right;" href="#" class="btn btn-primary"><strong>삭제</strong></a>
-                                                <h5 style="float:left; color:white;">조회수 : {{ freeDetail.hits_counter }} &nbsp;&nbsp;&nbsp;&nbsp;날짜 : {{freeDetail.pub_date}}</h5>
+                                                <hr style="border: solid .5px rgb(190, 188, 188);">
+                                                <a style="float:right;" href="#" class="btn btn-primary"><strong>modify</strong></a>
+                                                <a style="float:right;" href="">&nbsp;&nbsp;&nbsp;</a>
+                                                <a style="float:right;" href="#" class="btn btn-primary"><strong>delete</strong></a>
+                                                <h7 style="float:left; padding: 0 5px 0 0;color:white;">{{freeDetail.pub_date}}</h7>
+
                                                 </div>
                                               </div>
                                         </form>
