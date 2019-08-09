@@ -8,30 +8,57 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
             <div class="container-fluid">
+                <br><br><br>
                 <div class="row">
-                    <div class="col-sm-10">
-
+                        <div class="col-sm-2">
+                            
+                        </div>
+                    <div class="col-sm-8">
                         <br><br>
-
                         <!--내용추가할곳-->
-                        <div>
-                            <h1>잘나오는페이지에요</h1>
+                                        <form>
+                                            <div class="card" style="background-color: rgba(255, 238, 212, 0.445);">
+                                                <div class="card-header" style="background-color: rgb(253, 77, 77);">
+                                                    <div class="row">
+                                                            <div class="col-sm-2" style="border-right: solid .5px white;text-align: center; color:white;">
+                                                                    <h3 style=color:white;>Title</h3>
+                                                            </div>
+                                                            <div class="col-sm-9" style="color:white;">
+                                                                <h3 style=color:white;>{{ freeDetail.title }}</h3>
+                                                            </div>
+                                                            <div><a style="float:left; color:white; text-shadow: 1px 1px 1px gray; font-size: 13px; vertical-align: middle; ">조회수 : {{ freeDetail.hits_counter }}</a></div>
+                                                    </div>
+                                                </div>>
+                                                <div class="card-body">
+                                                    
+                                                  <h5 class="card-title">
+                                                        <div class="row">
+                                                                <div class="col-sm-2" style="border-right: solid .5px white; text-align: center;  line-height: 150px; color:white;">
+                                                                    Contents
+                                                                </div>
+                                                                <div class="col-sm-8" style="color:white;">
+                                                                    {{ freeDetail.body }}  
+                                                                    
+                                                                    <br>내
+                                                                    <br>용
+                                                                    <br>내용
+                                                                </div>
+                                                        </div>
+                                                </h5>
+                                                <hr style="border: solid .5px rgb(190, 188, 188);">
+                                                <a style="float:right;" href="#" class="btn btn-primary"><strong>modify</strong></a>
+                                                <a style="float:right;" href="">&nbsp;&nbsp;&nbsp;</a>
+                                                <a style="float:right;" href="#" class="btn btn-primary"><strong>delete</strong></a>
+                                                <h7 style="float:left; padding: 0 5px 0 0;color:white;">{{freeDetail.pub_date}}</h7>
+
+                                                </div>
+                                              </div>
+                                        </form>
+                            </div>
                         </div>
-                        <hr>
-                        <br>
-                        <div class="container">
-                            <h1>{{ freeDetail.title }}</h1>
-                            <br>
-                            <h6>조회수 : {{ freeDetail.hits_counter }}</h6>
-                            {# freeDetail.hits_counter 사용하면 다시 게시글 페이지로 돌아가면 바로 적용이 안됨..ㅠ #}
-
-
-                            <hr>
-                            <h5>{{ freeDetail.body }}</h5>
-                            <p>{{ freeDetail.pub_date}}</p>
-                        </div>
-
                     </div>
+                    <div class="col-sm-2">
+                        </div>
                 </div>
             </div>
         </div>
