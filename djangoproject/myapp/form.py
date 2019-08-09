@@ -3,6 +3,12 @@ from django import forms
 # 모델에서 정의한 PolicyList 
 from .models import free_list
 from .models import detect_list
+from .models import Cat
+
+class CatPost(forms.ModelForm):
+    class Meta:
+        model = Cat
+        fields = ['name', 'image', 'location', 'feature']
 
 class free_list(forms.ModelForm):
     class Meta:
