@@ -20,4 +20,9 @@ urlpatterns = [
     path('support/pop_snack',myapp.views.pop_snack, name="pop_snack"),
     path('support/support_success',myapp.views.support_success, name="support_success"),
     path('support/support_success2',myapp.views.support_success2, name="support_success2"),
-]
+    path('create/', myapp.views.create, name="create"),
+    path('location/<str:loc_str>/newMap/', myapp.views.newMap, name="newMap"),
+    path('location/', myapp.views.location, name="location"),
+    path('location/<str:loc_str>/', myapp.views.loc_cat, name="loc_cat"),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
