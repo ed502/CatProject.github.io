@@ -2,8 +2,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render , get_object_or_404, redirect
 from .models import free_list
 from .models import detect_list
+from .models import Support
 from django.utils import timezone
-from myapp.models import support
 from django.core.paginator import Paginator
 from django.urls import reverse
 from .models import Cat
