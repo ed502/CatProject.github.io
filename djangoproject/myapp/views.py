@@ -57,3 +57,17 @@ def detail(request, free_list_id):
     freeDetail = get_object_or_404(free_list, pk=free_list_id)
     return render(request, 'detail_free.html', {'freeDetail':freeDetail, 'free_list_id' : free_list_id})
 
+def support(request):
+    return render(request, 'support.html')
+
+def pop_tnr(request):
+    return render(request, 'pop_tnr.html')
+
+def pop_snack(request):
+    return render(request, 'pop_snack.html')
+
+def support_success(request):
+    return render(request, 'support_success.html')
+
+def support_success2(request):
+    return render(request, 'support_success2.html')
