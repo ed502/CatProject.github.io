@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+<!-- <div class="js-fullheight"> -->
+<div class="hero-wrap js-fullheight">
+    <div class="overlay"></div>
+    <div id="particles-js"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="container-fluid">
+                <br><br><br>
+                <div class="row">
+                        <div class="col-sm-2">
+                            
+                        </div>
+                    <div class="col-sm-8">
+                        <br><br>
+                        <!--내용추가할곳-->
+                                        <form>
+                                            <div class="card" style="background-color: rgba(255, 238, 212, 0.445);">
+                                                <div class="card-header" style="background-color: rgb(253, 77, 77);">
+                                                    <div class="row">
+                                                            <div class="col-sm-2" style="border-right: solid .5px white;text-align: center; color:white;">
+                                                                    <h3 style=color:white;>Title</h3>
+                                                            </div>
+                                                            <div class="col-sm-9" style="color:white;">
+                                                                <h3 style=color:white;>{{ freeDetail.title }}</h3>
+                                                            </div>
+                                                            <div><a style="float:left; color:white; text-shadow: 1px 1px 1px gray; font-size: 13px; vertical-align: middle; ">조회수 : {{ freeDetail.hits_counter }}</a></div>
+                                                    </div>
+                                                </div>>
+                                                <div class="card-body">
+                                                    
+                                                  <h5 class="card-title">
+                                                        <div class="row">
+                                                                <div class="col-sm-2" style="border-right: solid .5px white; text-align: center;  line-height: 150px; color:white;">
+                                                                    Contents
+                                                                </div>
+                                                                <div class="col-sm-8" style="color:white;">
+                                                                    {{ freeDetail.body }}  
+                                                                    
+                                                                    <br>내
+                                                                    <br>용
+                                                                    <br>내용
+                                                                </div>
+                                                        </div>
+                                                </h5>
+                                                <hr style="border: solid .5px rgb(190, 188, 188);">
+                                                <a style="float:right;" href="#" class="btn btn-primary"><strong>modify</strong></a>
+                                                <a style="float:right;" href="">&nbsp;&nbsp;&nbsp;</a>
+                                                <a style="float:right;" href="#" class="btn btn-primary"><strong>delete</strong></a>
+                                                <h7 style="float:left; padding: 0 5px 0 0;color:white;">{{freeDetail.pub_date}}</h7>
+
+                                                </div>
+                                              </div>
+                                        </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<footer class="ftco-footer ftco-bg-dark ftco-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Snipp.</h2>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                        there live the blind texts.</p>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4 ml-5">
+                    <h2 class="ftco-heading-2">Quick Links</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="py-2 d-block">Home</a></li>
+                        <li><a href="#" class="py-2 d-block">내 정보</a></li>
+                        <li><a href="#" class="py-2 d-block">고양이 자랑글</a></li>
+                        <li><a href="#" class="py-2 d-block">고양이 자유게시판</a></li>
+                        <li><a href="#" class="py-2 d-block">길고양이 지도</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Contact Information</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="py-2 d-block">198 West 21th Street, Suite 721 New York NY 10016</a>
+                        </li>
+                        <li><a href="#" class="py-2 d-block">+ 1235 2355 98</a></li>
+                        <li><a href="#" class="py-2 d-block">info@yoursite.com</a></li>
+                        <li><a href="#" class="py-2 d-block">email@email.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+                    is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                        target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}

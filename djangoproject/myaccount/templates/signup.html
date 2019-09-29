@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+<!-- <div class="js-fullheight"> -->
+<div id="scroll" class="hero-wrap js-fullheight">
+    <div class="overlay"></div>
+    <div id="particles-js"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+                <div class="alert alert-danger" role="alert">Welcome, Cat World!</div><br>
+                {% if error %}
+                {{ error }}
+                <br><br>
+                {% endif %}
+                <!--form 들어올 자리-->
+                <form method="POST" action="{% url 'signup' %}">
+                        {% csrf_token %}
+                    <div class="form-group">
+                        <label for="inputName">닉네임</label>
+                        <input type="text" class="form-control text-center" name="username" id="inputName" placeholder="Input your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputID2">이메일</label>
+                        <input type="text" class="form-control text-center" name="useremail" id="inputID2" placeholder="Input your ID">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword2">비밀번호</label>
+                            <input type="password" class="form-control text-center" name="userpwd1" id="inputPassword2" placeholder="Input your password">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword3">비밀번호 확인</label>
+                            <input type="password" class="form-control text-center" name="userpwd2" id="inputPassword3" placeholder="one more">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">거주지</label>
+                            <input type="text" class="form-control text-center" name="userhome" id="inputCity">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputState">성별</label>
+                            <select id="inputState" class="form-control" name="usersex">
+                                <option default>Cat</option>
+                                <option>Woman</option>
+                                <option>Man</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Create account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

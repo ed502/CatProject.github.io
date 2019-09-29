@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+<!-- <div class="js-fullheight"> -->
+<style></style>
+<div id="scroll" class="hero-wrap js-fullheight">
+  <div class="overlay"></div>
+  <div id="particles-js"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+      <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+        <!--include here, your own information-->
+        {% if user.is_authenticated%}
+        <img src="{% static 'catuser.png' %}" height="200" alt="" class="img-rounded">
+        <br>
+        <div class="shadow p-3 mb-5 rounded" style="background-color: pink (opacity=10)">
+          <h7>이름: </h7>
+          <h7>{{user.username}}</h7><br>
+
+          <h7>이메일: </h7>
+          <h7>{{user.email}}</h7><br>
+
+          <h7>거주지: </h7>
+          <h7>{{user.first_name}}</h7><br><br>
+
+          <h7>My Support State</h7>
+          <br>
+          {% for support in supports %}
+          <br>{{support.support}}<br>
+
+          <div class="progress" style="height: 20px;">
+            <div class="progress-bar" role="progressbar" style="width: {{support.support}};" aria-valuenow="25"
+              aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="shadow p-3 mb-5 rounded" style="background-color: pink (opacity=10)">
+          <table class="table">
+
+            <tr>
+              <th width="20%">종류</th>
+              <th width="30%">예금주</th>
+              <th width="30%">가격</th>
+              <th width="30%">상태</th>
+            </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                <td>먕먕</td>
+                <td>멍멍</td>
+                <td>먕먕</td>
+                <td>멍멍</td>
+
+              </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+
+        {% else %}
+        <img src="{% static 'catuser.png' %}" height="300" alt="" class="img-rounded">
+        <div>
+          <h3 class="text-white font-weight-bold">&nbsp;&nbsp;p l z &nbsp;&nbsp; l o g i n</h3>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+<!-- <div class="js-fullheight"> -->
+<div class="hero-wrap js-fullheight">
+    <div class="overlay"></div>
+    <div id="particles-js"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <br><br>
+                        <div>
+                            <table class="table table-striped table-bordered table-hover "
+                                style="background-color: #EF5350;background-color: rgba(238, 75, 75, 0.6); width:80%;margin:auto;float:right;">
+                                <thead style="background-color: rgba(248, 7, 7, 0.6);" align="center">
+                                    <tr>
+                                        <th width="10%">번호</th>
+                                        <th width="50%">제목</th>
+                                        <th width="10%">작성자</th>
+                                        <th width="20%">작성일</th>
+                                        <th width="10%">조회</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for free_list in posts %}
+                                    <tr>
+                                        <td>{{free_list.id}}</td>
+                                        <td><a style="color: white;"
+                                                href="{% url 'detail' free_list.id %}">{{free_list.title}}</a></td>
+                                        <td>{{free_list.writer}}</td>
+                                        <td>{{free_list.pub_date | date:"Y-m-d"}}</td>
+                                        <td>{{free_list.hits}}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="container-fluid row">
+                        </div>
+                        <div class="card-body text-dark">
+                            <div class="float-right">
+                                <form class="form-inline" action="" method="post">
+                                    {% csrf_token %}
+                                    <div id="d">
+                                        <div class="form-group">
+                                            <div style="position: relative; top:8px; left:8px;">
+                                                <ul class="pagination pagination-lg">
+                                                {% if posts.has_previous %}
+                                                <li class="page-item">
+                                                    <a class="page-link" href="?page={{posts.previous_page_number}}"
+                                                        aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                    </a>
+                                                </li>
+                                                {% else %}
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#"
+                                                        aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                    </a>
+                                                </li>
+                                                {% endif %}
+
+                                                {% if posts.has_previous %}
+                                                <li class="page-item"><a class="page-link" href="?page={{posts.previous_page_number}}">{{posts.previous_page_number}}</a></li>
+                                                {% endif %}
+                                                
+                                                <li class="page-item"><a class="page-link" href="?page={{posts.number}}">{{posts.number}}</a></li>
+                                                
+                                                {% if posts.has.next %}
+                                                <li class="page-item"><a class="page-link" href="?page={{posts.next_page_number}}">{{posts.next_page_number}}</a></li>
+                                                {% endif %}
+
+                                                {% if posts.has_next %}
+                                                <li class="page-item">
+                                                    <a class="page-link" href="?page={{posts.next_page_number}}" aria-label="Next">
+                                                      <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                </li>
+                                                {% else %}
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#" aria-label="Next">
+                                                      <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                </li>
+                                                {% endif %}
+
+                                                </ul>
+                                            </div>
+                                            &emsp;&emsp;&emsp;
+                                            <select class="form-control">
+                                                <option selected>속성</option>
+                                                <option>제목</option>
+                                                <option>내용</option>
+                                                <option>이름</option>
+                                            </select>
+                                            &emsp;
+                                            <input type="text" id="searchTxt" name="searchTxt" class="form-control"
+                                                placeholder="검색어를 입력하세요">&emsp;
+                                </form>
+                                <button type="submit" class="btn btn-primary">
+                                    <b>검색</b>
+                                </button>&emsp;
+                                <a class="btn btn-primary" href="{% url 'create_free'%}"><strong>글작성</strong></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<footer class="ftco-footer ftco-bg-dark ftco-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Snipp.</h2>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                        there live the blind texts.</p>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4 ml-5">
+                    <h2 class="ftco-heading-2">Quick Links</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="py-2 d-block">Home</a></li>
+                        <li><a href="#" class="py-2 d-block">내 정보</a></li>
+                        <li><a href="#" class="py-2 d-block">고양이 자랑글</a></li>
+                        <li><a href="#" class="py-2 d-block">고양이 자유게시판</a></li>
+                        <li><a href="#" class="py-2 d-block">길고양이 지도</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Contact Information</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="py-2 d-block">198 West 21th Street, Suite 721 New York NY 10016</a>
+                        </li>
+                        <li><a href="#" class="py-2 d-block">+ 1235 2355 98</a></li>
+                        <li><a href="#" class="py-2 d-block">info@yoursite.com</a></li>
+                        <li><a href="#" class="py-2 d-block">email@email.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+                    is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                        target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}

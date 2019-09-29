@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+    
+    <!-- <div class="js-fullheight"> -->
+
+    <div class="hero-wrap js-fullheight">
+      <div class="overlay"></div>
+      <div id="particles-js"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%', opacity: 1.6 }">
+            {% if user.is_authenticated %}
+              <button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='{% url 'newMap' loc %}'">추가하기</button>
+            {% else %}
+              <button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='#'">로그인 후 사용가능</button>
+            {% endif %}
+            <br>
+            <div class="container">
+              <div class="row">
+                {% for cat in posts %}
+                  <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                      <div href="#layer2" class="btn-example">
+                      <img class="card-img-top" src="{{ cat.image.url }}"height=200 alt="Card image cap">
+                      </div>
+                      <div class="card-body">
+                        <h4>{{ cat.name }} </h4>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <!--<button type="button" class="btn btn-sm btn-outline-secondary"> -->                          
+                            
+                            <div class="dim-layer">
+                              <div class="dimBg"></div>
+                              <div id="layer2" class="pop-layer">
+                                <div class="pop-container">
+                                  <div class="pop-conts">
+                                    <!--content //-->
+                                    <div class="ctxt mb20">
+                                      <div class="row">
+                                        <div class="col-md-5"> 
+                                          <img style="float:left;" src="{{ cat.image.url }}" width="350">
+                                        </div>
+                                        <div class="col-md-1">
+                                          
+                                        </div>
+                                        <div class="col-md-6">
+                                          <br>
+                                          <div style="text-align:left">
+                                            <p> 이름: {{ cat.name }}<br>
+                                                장소: {{ cat.location }}<br>
+                                                특징: {{ cat.feature }}
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="btn-r">
+                                      <a href="#" class="btn-layerClose">Close</a>
+                                    </div>                              
+                                    <!--// content-->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>                        
+                            <!--<button type="button" class="btn btn-sm btn-outline-secondary">수정하기</button> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+
+                <div class = "container">
+                    {%if posts.has_previous%}
+                    <a href="?page=1">First</a>
+                    <a href="?page={{posts.previous_page_number}}">Previous</a>
+                    {%endif%}
+            
+                    <span>{{posts.number}}</span>
+                    <span>of</span>
+                    <span>{{posts.paginator.num_pages}}</span>
+            
+                    {%if posts.has_next%}
+                    <a href="?page={{posts.next_page_number}}">Next</a>
+                    <a href="?page={{posts.paginator.num_pages}}">Last</a>
+                    {%endif%}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+              <div id="map" style="width:400px;height:400px;"></div>
+              <script>
+              var mapOptions = {
+                  center: new naver.maps.LatLng(37.3595704, 127.105399),
+                  zoom: 10
+              };      
+              var map = new naver.maps.Map('map', mapOptions);
+              </script>
+            -->
+    <!-- loader -->
+    {% endblock %}
