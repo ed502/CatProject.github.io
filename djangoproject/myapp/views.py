@@ -112,6 +112,10 @@ def support_success2(request):
 def location(request):
     return render(request, 'location.html')
 
+    
+def pay(request):
+    return render(request, 'pay.html')
+
 def loc_cat(request, loc_str):
     cats = Cat.objects.filter(state=loc_str)
     cats = cats.order_by('-id')

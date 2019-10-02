@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 합쳐지고 최소화된 최신 CSS -->
+  <!-- PC용 -->
+<script type="text/javascript" src="//pay.naver.com/customer/js/naverPayButton.js"></script>
+
+<!-- 모바일용 -->
+<script type="text/javascript" src="//pay.naver.com/customer/js/mobile/naverPayButton.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+  <!-- 부가적인 테마 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+  <title>멋쟁이 사자처럼 집사!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,700,800" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+
+  <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+  <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
+  <style>
+    p {
+      font-family: 'Do Hyeon', sans-serif;
+      color: black;
+      font-size: 23px;
+    }
+
+    p.a {
+      font-weight: 400;
+    }
+
+    p.b {
+      font-weight: 700;
+    }
+
+    p.c {
+      font-weight: 800;
+    }
+
+    p.d {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<center>
+  <img src="{% static 'images/snack.jpg' %}" height=200 width=600>
+
+  <form name="pgForm">
+	<input type="hidden" name="Amt" value="1000">
+	<input type="hidden" name="BuyerName" value="홍길동">
+	<input type="hidden" name="OrderName" value="결제테스트">
+  </form>
+</center>
+
+<script>
+IMP.request_pay({
+    pg : 'naverco',
+    pay_method : 'card', //연동되지 않습니다. 네이버페이 결제창 내에서 결제수단을 구매자가 직접 선택하게 됩니다.
+    merchant_uid : 'merchant_' + new Date().getTime(), //상점에서 관리하시는 고유 주문번호를 전달
+    name : '주문명:결제테스트',
+    amount : 14000,
+    buyer_email : 'iamport@siot.do',
+    buyer_name : '구매자이름',
+    buyer_tel : '010-1234-5678', //누락되면 이니시스 결제창에서 오류
+    buyer_addr : '서울특별시 강남구 삼성동',
+    buyer_postcode : '123-456',
+    naverProducts : [
+    	{
+    		id : "singleProductId",
+    		name : "네이버페이 상품1",
+    		basePrice : 1000,
+    		taxType : 'TAX_FREE', //TAX or TAX_FREE
+    		quantity : 2,
+    		infoUrl : "http://www.iamport.kr/product/detail",
+    		imageUrl : "http://www.iamport.kr/product/detail/thumbnail",
+    		shipping : {
+    			groupId : "shipping-a",
+    			method : "DELIVERY", //DELIVERY(택배·소포·등기), QUICK_SVC(퀵 서비스), DIRECT_DELIVERY(직접 전달), VISIT_RECEIPT(방문 수령), NOTHING(배송 없음)
+    			baseFee : 2500,
+    			feeRule : {
+    				freeByThreshold : 20000
+    			},
+    			feePayType : "PREPAYED" //PREPAYED(선불), CASH_ON_DELIVERY(착불)
+    		}
+    	},
+    	{
+    		id : "optionProductId",
+    		name : "네이버페이 상품2",
+    		basePrice : 1000,
+    		taxType : 'TAX_FREE', //TAX or TAX_FREE
+    		infoUrl : "http://www.iamport.kr/product/detail",
+    		imageUrl : "http://www.iamport.kr/product/detail/thumbnail",
+    		options : [ //네이버페이 상품2에 대해서 빨강-170mm사이즈 3개와 빨강-180mm사이즈 2개: 총 5개 구매
+    			{
+    				optionQuantity : 3,
+    				optionPrice : 100,
+    				selectionCode : "R_M",
+    				selections : [
+    					{
+	      					code : "RED",
+	  						label : "색상",
+	  						value : "빨강"
+	  					},
+	  					{
+	  						code : "170",
+	  						label : "사이즈",
+	  						value : "170"
+	  					}
+					]
+				},
+    			{
+    				optionQuantity : 2,
+    				optionPrice : 200,
+    				selectionCode : "R_L",
+    				selections : [
+    					{
+	      					code : "RED",
+	  						label : "색상",
+	  						value : "빨강"
+	  					},
+	  					{
+	  						code : "180",
+	  						label : "사이즈",
+	  						value : "180"
+	  					}
+					]
+				}
+			],
+			shipping : {
+				groupId : "shipping-a",
+				method : "DELIVERY", //DELIVERY(택배·소포·등기), QUICK_SVC(퀵 서비스), DIRECT_DELIVERY(직접 전달), VISIT_RECEIPT(방문 수령), NOTHING(배송 없음)
+				baseFee : 2500,
+				feeRule : {
+    				freeByThreshold : 20000
+    			},
+				feePayType : "PREPAYED" //PREPAYED(선불), CASH_ON_DELIVERY(착불)
+			}
+		}
+	]
+});
+
+naver.NaverPayButton.apply({
+	BUTTON_KEY: "네이버에서 전달받은 버튼생성키",
+	TYPE: "C", //버튼 스타일
+	COLOR: 1, //버튼 색상타입
+	COUNT: 2, // 네이버페이버튼 + 찜하기버튼 모두 출력 여부
+	ENABLE: "Y", //네이버페이 활성여부(재고부족 등에는 N으로 비활성처리)
+	EMBED_ID: "iamport-naverpay-product-button", //네이버페이 버튼 UI가 부착될 HTML element의 ID
+	BUY_BUTTON_HANDLER : function() {
+		//중략
+		//핸들러 내에서 아임포트 네이버페이 결제 함수 호출
+		IMP.request_pay(param);
+	},
+	WISHLIST_BUTTON_HANDLER : function() {
+		//중략
+		
+		//핸들러 내에서 아임포트 네이버페이 찜하기 함수 호출(iamport.payment-1.1.6.js부터 지원됨)
+		IMP.naver_zzim(param);
+	}
+});
+</script>

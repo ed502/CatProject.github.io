@@ -26,5 +26,6 @@ urlpatterns = [
     path('location/<str:loc_str>/newMap/', myapp.views.newMap, name="newMap"),
     path('location/', myapp.views.location, name="location"),
     path('location/<str:loc_str>/', myapp.views.loc_cat, name="loc_cat"),
+    path('pay/', myapp.views.pay, name="pay"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

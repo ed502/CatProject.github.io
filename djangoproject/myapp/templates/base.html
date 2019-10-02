@@ -87,6 +87,7 @@
                         </div>
                     </li>
                     <li class="nav-item"><a href="{% url 'support'%}" class="nav-link">후원</a></li>
+                    <li class="nav-item"><a href="{% url 'pay'%}" class="nav-link">결제</a></li>
                     {% if user.is_authenticated %}
                     <li class="nav-item cta"><a href="javascript:{document.getElementById('logout').submit()}"
                             class="nav-link"><span>로그아웃</span></a></li>
