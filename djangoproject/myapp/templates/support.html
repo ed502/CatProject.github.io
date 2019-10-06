@@ -16,12 +16,19 @@
                                     <img src="{% static 'images/supprot_ntr.png' %}" height=100% width=800>
                                 </center>
                                 <center>
+                                    {% if user.is_authenticated %}
                                     <a href="#"
                                         onclick="window.open('pop_tnr','pop_tnr','width=680,height=400,location=no,status=no,scrollbars=no');"
                                         class="btn btn-primary btn-lg btn-outline-pink px-5 py-3"
                                         style="margin-bottom:0px; margin-top:20px;">
                                         <font size="5em" color="#eb86b4">후원 하기
                                     </a></font>
+                                    {% else %}
+                                    <a href="#"
+                                        class="btn btn-primary btn-lg btn-outline-pink px-5 py-3"
+                                        style="margin-bottom:0px; margin-top:20px;">
+                                    <font size= "5em" color = "#eb86b4">로그인 후 후원</a></font>
+                                    {% endif%}
                                 </center>
                             </div>
                             <div class="carousel-item" style="margin-top:50px;">
@@ -29,12 +36,20 @@
                                     <img src="{% static 'images/supprot_num.png' %}" height=100% width=800 >
                                 </center>
                                 <center>
+                                    {% if user.is_authenticated %}
                                     <a href="#"
                                         onclick="window.open('pop_snack','pop_tnr','width=680,height=400,location=no,status=no,scrollbars=no');"
                                         class="btn btn-primary btn-lg btn-outline-pink px-5 py-3"
                                         style="margin-bottom:30px;">
                                         <font size="5em" color="#eb86b4">후원 하기
                                     </a></font>
+                                    {% else %}
+                                    <a href="#"
+                                        class="btn btn-primary btn-lg btn-outline-pink px-5 py-3"
+                                        style="margin-bottom:30px;">
+                                        <font size="5em" color="#eb86b4">로그인 후 후원
+                                    </a></font>
+                                    {% endif %}
                                 </center>
                             </div>
                         </div>

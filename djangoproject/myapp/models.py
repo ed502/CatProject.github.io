@@ -59,6 +59,7 @@ class detect_list(models.Model):
 
 class Support(models.Model):
     type = models.CharField(max_length=20, default="")
+    user = models.CharField(max_length=20, default="")
     supporter = models.CharField(max_length=20, default="")
     money = models.IntegerField(default=0)
     status = models.BooleanField(default="False")

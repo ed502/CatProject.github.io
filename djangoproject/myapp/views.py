@@ -9,7 +9,6 @@ from django.urls import reverse
 from .models import Cat
 from .form import CatPost
 
-
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -89,26 +88,23 @@ def pop_snack(request):
     return render(request, 'pop_snack.html')
 
 def support_success(request):
-    supports = Support.objects.all()
+    supports = Support()
+    supports.user = request.user.username
     supports.type = 'TNR'
-    supports.supporter = request.GET.get('supporter','')
-    supports.money = request.GET.get('money','')
-
+    supports.supporter = request.POST.get('supporter', '')
+    supports.money = request.POST.get('money', '')
     supports.save()
-    return redirect('/support/support_success')
-    #return render(request, 'support_success.html')
+    return render(request, 'support_success.html')
 
 def support_success2(request):
-    supports = Support.objects.all()
+    supports = Support()
+    supports.user = request.user.username
     supports.type = 'SNACK'
-    supports.supporter = request.GET.get('supporter2','')
-    supports.money = request.GET.get('money2','')
-
+    supports.supporter = request.POST.get('supporter2', '')
+    supports.money = request.POST.get('money2', '')
     supports.save()
-    return redirect('/support/support_success2')
-    #return render(request, 'support_success2.html')
+    return render(request, 'support_success2.html')
 
-    
 def location(request):
     return render(request, 'location.html')
 
